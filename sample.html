@@ -3,34 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <style>
-        #head-line {
-            font-size: 3em;
-            color: royalblue;
-        }
-        #desc {
-            font-size: 1.2em;
-            color: royalblue;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/sample.css">
 </head>
 <body>
     <h1 id="head-line">자바스크립트</h1>
     <p id="desc">자바스크립트와 HTML 연결</p>
-    
-    <script>
-        let isRed = false;
-        const head = document.querySelector("#head-line");
-        head.onclick = function() {
-            if(!isRed){
-                head.style.color = "red";
-            }
-            else {
-                head.style.color = "blue";
-            }
-            isRed = !isRed
-        }
-
-    </script>
+    <script src="./src/sample.js"></script>
 </body>
 </html>
