@@ -16,7 +16,7 @@
             justify-content: center;
             align-items: center;
         } */
-        .grade {
+        /* .grade {
             width: 200px;
             height: 100px;
         }
@@ -63,6 +63,44 @@
             height: 50px;
             text-align: center;
             border: 1px solid black;
+        } */
+        .result-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh; 
+            background-image: url("images/ham2.png");
+        }
+
+        .result-text {
+            font-size: 36px; 
+            color: #333; 
+            background-color: rgba(255, 255, 255, 0.7); 
+            padding: 20px; 
+            border-radius: 10px; 
+            text-align: center; 
+        }
+        * {
+            box-sizing: border-box;
+        }
+        .menu {
+            width: 400px;
+            height: 300px;
+            box-shadow: 1px 1px 5px black;
+            border-radius: 10px;
+            background-image: url(images/ham2.png);
+            background-size:cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .menu p {
+            font-size: 4em;
+            font-weight: bold;
+            color: yellow;
+            text-shadow: 2px 2px 5px black;
         }
     </style>
 </head>
@@ -70,6 +108,35 @@
     <!-- <div class="grade">
     </div>
     <script src="./src/grade.js"></script> -->
-    <script src="./src/nInt.js"></script>
+    <!-- <script src="./src/nInt.js"></script> -->
+    <!-- <div class="result-container">
+        <div class="result-text">
+            <span id="result"></span>
+        </div>
+    </div>
+     -->
+
+     <h2>세트 매뉴 가격</h2>
+     <label for="menu1">첫번째 버거 가격 입력</label>
+     <input type="number" id="menu1">
+     <br>
+     <label for="menu2">두번째 버거 가격 입력</label>
+     <input type="number" id="menu2"> 
+     <br>
+     <label for="menu3">세번째 버거 가격 입력</label>
+     <input type="number" id="menu3">
+     <br>
+     <label for="menu4">첫번째 음료 가격 입력</label>
+     <input type="number" id="menu4">
+     <br>
+     <label for="menu5">두번째 음료 가격 입력</label>
+     <input type="number" id="menu5">
+     <br>
+     <button onclick="getPrice()">세트 매뉴 계산하기</button>
+
+     <div class ="menu">
+        <p id="value"></p>
+    </div>
+    <script src="./src/hamburger.js"></script>
 </body>
 </html>
