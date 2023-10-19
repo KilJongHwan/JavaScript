@@ -10,7 +10,7 @@ addButton.onclick = function() {
         listItem.onclick = function() {
             listItem.remove();
         };
-        subjectList.appendChild(listItem);
+        subjectList.insertBefore(listItem, subjectList.firstChild);
         subjectInput.value = '';
     }
 };
