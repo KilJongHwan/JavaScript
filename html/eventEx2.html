@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        ul, li {
+            list-style: none;
+        }
+        ul button {
+            background-color: aliceblue;
+            color: #000;
+        }
+        #itzy {
+            width: 80vw;
+            height: 65vw;
+            background-repeat: no-repeat;
+            background-image: url(../images/잇지.jpeg);
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <button id="itzy"></button>
+    <ul id="itzy-sub"></ul>
+    <script>
+        const itzy = document.querySelector("#itzy");
+        const itzySub = document.querySelector("#itzy-sub");
+
+        itzy.addEventListener("click", function() {
+            const existingItems = itzySub.querySelectorAll("li");
+            itzySub.style.display = "block";
+            if (existingItems.length === 0) {
+                const listItem = document.createElement("li");
+                itzySub.appendChild(listItem);
+                listItem.innerHTML = "<h2>그룹 잇지</h2>";
+                const description = document.createElement("p");
+                description.innerHTML = `
+                    팀명 'ITZY'는 '너희가 원하는 거 전부 있지? 있지!' 라는 뜻을 가지고 있으며,<br>
+                    정식 한글 표기법은 있지이다. 혹 영어명인 'ITZY'로만 들어본 사람들이<br>
+                    한글로는 어떻게 적는지 몰라 '잇지'라고 부르는 경우도 꽤 많이 있는데.<br>
+                `;
+                const closeButton = document.createElement("button");
+                closeButton.innerHTML = "상세 설명 닫기";
+                closeButton.onclick = closeSub;
+                listItem.appendChild(description);
+                listItem.appendChild(closeButton);
+            }
+        });
+        function closeSub() {
+            itzySub.style.display = "none";
+        }
+    </script>
+</body>
+</html>
