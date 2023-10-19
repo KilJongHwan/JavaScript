@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .button-list {
+            margin: auto;
+            padding: auto;
+        }
+
+        #green-button,
+        #orange-button,
+        #purple-button {
+            width: 200px;
+            height: 50px;
+            color: white;
+            margin: 0 5px; 
+        }
+
+        #green-button {
+            background-color: green;
+        }
+
+        #orange-button {
+            background-color: orange;
+        }
+
+        #purple-button {
+            background-color: purple;
+        }
+        .background {
+            margin-top: 2%;
+            width: 100%;
+            height: 150px;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-list">
+        <button id="green-button">Green</button>
+        <button id="orange-button">Orange</button>
+        <button id="purple-button">Purple</button>
+        <div class="background">
+        </div>
+    </div>
+
+    <script>
+        const green = document.querySelector("#green-button");
+        const orange = document.querySelector("#orange-button");
+        const purple = document.querySelector("#purple-button");
+        const background = document.querySelector(".background");
+
+        green.addEventListener("click", function() {
+            // alert("green");
+            background.style.backgroundColor = "green";
+        });
+        
+        orange.addEventListener("click", function() {
+            // alert("orange");
+            background.style.backgroundColor = "orange";
+        });
+        
+        purple.addEventListener("click", function() {
+            // alert("purple");
+            background.style.backgroundColor = "purple";
+        });
+    </script>
+</body>
+</html>
