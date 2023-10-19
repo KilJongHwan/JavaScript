@@ -3,11 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/sample.css">
+    <!-- <link rel="stylesheet" href="./css/sample.css"> -->
+    <style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .circle {
+        width: 35vw;
+        height: 35vw;
+        border: 3px solid #000;
+        background-color: #3498db;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 24px;
+        text-align: center;
+    }
+    .large-text {
+        font-size: 2.5rem;
+        display: block;
+        margin-bottom: 3vw;
+        color: #000;
+    }
+
+    .red-text {
+        font-size: 3rem;
+        color: red;
+    }
+    </style>
 </head>
 <body>
-    <h1 id="head-line">자바스크립트</h1>
+    <!-- <h1 id="head-line">자바스크립트</h1>
     <p id="desc">자바스크립트와 HTML 연결</p>
-    <script src="./src/sample.js"></script>
+    <script src="./src/sample.js"></script> -->
+    <div class="circle">
+        <span id="result"></span>
+    </div>
+    <script src="./src/remainTime.js"></script>
 </body>
 </html>
