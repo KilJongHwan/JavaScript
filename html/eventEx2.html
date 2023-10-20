@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
+        span {
+            font-weight: bold;
+        }
         ul, li {
             list-style: none;
         }
@@ -11,34 +14,55 @@
             background-color: aliceblue;
             color: #000;
         }
+        #itzy-container {
+            position: relative;
+        }
         #itzy {
             width: 80vw;
             height: 65vw;
             background-repeat: no-repeat;
             background-image: url(../images/잇지.jpeg);
             background-size: cover;
+            cursor: pointer;
+        }
+        #overlay-text {
+            position: absolute;
+            left: 40%;
+            bottom: 0;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
         }
     </style>
 </head>
 <body>
-    <button id="itzy"></button>
+    <div id="itzy-container">
+        <div id="itzy"></div>
+        <div id="overlay-text">상세정보를 보시려면 클릭하세요</div>
+    </div>
     <ul id="itzy-sub"></ul>
     <script>
         const itzy = document.querySelector("#itzy");
         const itzySub = document.querySelector("#itzy-sub");
-
+        const itzyContainer = document.querySelector("#itzy-container");
+        const overlayText = document.querySelector("#overlay-text");
+        
         itzy.addEventListener("click", function() {
             const existingItems = itzySub.querySelectorAll("li");
             itzySub.style.display = "block";
+            overlayText.style.display = "none";
+            itzyContainer.style.cursor = "default"; 
             if (existingItems.length === 0) {
                 const listItem = document.createElement("li");
                 itzySub.appendChild(listItem);
-                listItem.innerHTML = "<h2>그룹 잇지</h2>";
+                listItem.innerHTML = "<span>그룹 잇지</span>";
                 const description = document.createElement("p");
                 description.innerHTML = `
-                    팀명 'ITZY'는 '너희가 원하는 거 전부 있지? 있지!' 라는 뜻을 가지고 있으며,<br>
-                    정식 한글 표기법은 있지이다. 혹 영어명인 'ITZY'로만 들어본 사람들이<br>
-                    한글로는 어떻게 적는지 몰라 '잇지'라고 부르는 경우도 꽤 많이 있는데.<br>
+                    팀명 'ITZY'는 '너희가 원하는 거 전부 있지? 있지!' 라는 뜻을 가<br>
+                    지고 있으며,정식 한글 표기법은 있지이다. 혹 영어명인 'ITZY'로<br>
+                    만 들어본 사람들이한글로는 어떻게 적는지 몰라 '잇지'라고 부르<br>
+                    는 경우도 꽤 많이 있는데.'잇지'라고 불러야한다며 정정해주는<br>
+                    것이 팬덤 잇지에게는 일상이 됐다.
                 `;
                 const closeButton = document.createElement("button");
                 closeButton.innerHTML = "상세 설명 닫기";
@@ -49,6 +73,8 @@
         });
         function closeSub() {
             itzySub.style.display = "none";
+            overlayText.style.display = "block";
+            itzyContainer.style.cursor = "pointer";
         }
     </script>
 </body>

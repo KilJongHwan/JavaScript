@@ -5,27 +5,26 @@
     <title>Document</title>
     <style>
         body {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
         }
 
         .button-list {
-            margin: auto;
-            padding: auto;
+            display: flex;
+            width: 100vw;
+            margin: 10px auto;
         }
 
-        #green-button,
-        #orange-button,
-        #purple-button {
+        .button{
             width: 200px;
             height: 50px;
             color: white;
-            margin: 0 5px; 
+            margin: 2px;
+            flex-grow: 1;
+            justify-content: center;
+            border: 1px solid black;
+            border-radius: 2px;
         }
 
         #green-button {
@@ -40,42 +39,37 @@
             background-color: purple;
         }
         .background {
-            margin-top: 2%;
             width: 100%;
-            height: 150px;
-            background-color: lightgray;
+            /* width: 500px; */
+            height: 300px;
+            border: 2px solid #ccc;
+            border-radius: 15px;
+            margin: 10px auto;
         }
     </style>
 </head>
 <body>
     <div class="button-list">
-        <button id="green-button">Green</button>
-        <button id="orange-button">Orange</button>
-        <button id="purple-button">Purple</button>
-        <div class="background">
-        </div>
+        <button class="button" id="green-button" onclick="changeBG('Green')">Green</button>
+        <button class="button" id="orange-button" onclick="changeBG('Orange')">Orange</button>
+        <button class="button" id="purple-button" onclick="changeBG('Purple')"> Purple</button>
     </div>
+    <div class="background"></div>
 
     <script>
-        const green = document.querySelector("#green-button");
-        const orange = document.querySelector("#orange-button");
-        const purple = document.querySelector("#purple-button");
-        const background = document.querySelector(".background");
+        const btns = document.querySelectorAll(".button");
 
-        green.addEventListener("click", function() {
-            // alert("green");
-            background.style.backgroundColor = "green";
-        });
+        for(let i =0; i < btns.length; i++){
+            btns[i].addEventListener("click", function() {
+                alert(`${this.textContent} 버튼이 출력`);
+            });
+        }
+
+        function changeBG(color){
+            const rst = document.querySelector(".background");
+            rst.style.backgroundColor = color;
+        }
         
-        orange.addEventListener("click", function() {
-            // alert("orange");
-            background.style.backgroundColor = "orange";
-        });
-        
-        purple.addEventListener("click", function() {
-            // alert("purple");
-            background.style.backgroundColor = "purple";
-        });
     </script>
 </body>
 </html>
