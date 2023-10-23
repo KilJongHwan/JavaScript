@@ -1,0 +1,61 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "title": "react",
+      "author": "facebook",
+      "addr": "Newyork",
+      "id": 2
+    },
+    {
+      "title": "react",
+      "author": "facebook",
+      "addr": "Newyork",
+      "id": 3
+    },
+    {
+      "title": "react",
+      "author": "facebook",
+      "addr": "Newyork",
+      "id": 4
+    },
+    {
+      "title": "react",
+      "author": "facebook",
+      "addr": "Newyork",
+      "id": 5
+    },
+    {
+      "title": "react",
+      "author": "facebook",
+      "addr": "Newyork",
+      "id": 6
+    },
+    {
+      "title": "react",
+      "author": "facebook",
+      "addr": "Newyork",
+      "id": 7
+    },
+    {
+      "title": "react",
+      "author": "facebook",
+      "addr": "Newyork",
+      "id": 8
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
