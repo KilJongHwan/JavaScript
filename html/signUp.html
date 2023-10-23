@@ -49,16 +49,16 @@
 <body>
     <form action="#">
         <input type="text" id="username" name="username" placeholder="아이디 입력" required>
-        <button type="button" onclick="idCheck()">확인</button>
+        <button type="button" onclick="idCheck(); enableSubmitButton();">확인</button>
         <div id="usernameMessage" class="error"></div>
         <input type="password" id="password" name="password" placeholder="패스워드 입력" required>
-        <button type="button" onclick="pwdCheck()">확인</button>
+        <button type="button" onclick="pwdCheck(); enableSubmitButton();">확인</button>
         <div id="passwordMessage" class="error"></div>
         <input type="email" id="email" name="email" placeholder="이메일 입력" required>
-        <button type="button" onclick="emailCheck()">확인</button>
+        <button type="button" onclick="emailCheck(); enableSubmitButton();">확인</button>
         <div id="emailMessage" class="error"></div>
         <input type="tel" id="phone" name="phone" placeholder="전화번호 입력" required>
-        <button type="button" onclick="phoneCheck()">확인</button>
+        <button type="button" onclick="phoneCheck(); enableSubmitButton();">확인</button>
         <div id="phoneMessage" class="error"></div>
         <input id="subbtn" type="submit" value="가입 요청" disabled>
     </form>
@@ -128,10 +128,10 @@
             }
         }
 
-        username.addEventListener("input", enableSubmitButton);
-        password.addEventListener("input", enableSubmitButton);
-        email.addEventListener("input", enableSubmitButton);
-        phone.addEventListener("input", enableSubmitButton);
+        // username.addEventListener("input", enableSubmitButton);
+        // password.addEventListener("input", enableSubmitButton);
+        // email.addEventListener("input", enableSubmitButton);
+        // phone.addEventListener("input", enableSubmitButton);
     </script>
 </body>
 </html>
